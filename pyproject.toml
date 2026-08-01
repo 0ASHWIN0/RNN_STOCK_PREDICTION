@@ -1,0 +1,18 @@
+[project]
+name = "rnn-stock-prediction"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "ipython>=9.15.0",
+    "matplotlib>=3.11.1",
+    "matplotlib-inline>=0.2.2",
+    "numpy>=2.5.1",
+    "pandas>=3.0.3",
+    "pyqt5>=5.15.11",
+    "scikit-learn>=1.9.0",
+    "tensorflow>=2.21.0",
+    "yfinance>=1.5.1",
+]
