@@ -1,8 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
-
-# ### MasterCard Stock Price Prediction Using LSTM
-# We use Kaggle's MasterCard stock dataset from May-25-2006 to Oct-11-2021 and train an LSTM model to forecast the stock price.
 
 import os
 import numpy as np
@@ -112,15 +108,14 @@ def plot_predictions(test, predicted):
 
 def return_rmse(test, predicted):
     rmse = np.sqrt(mean_squared_error(test, predicted))
-    print("The root mean squared error is {:.2f}.".format(rmse))
+    print(f"The root mean squared error is {rmse:.2f}.")
 
 
-def main():
-    set_random_seed(SEED)
-    np.random.seed(SEED)
+def main(ticker=TICKER, start=START, epochs=EPOCHS, batch_size=BATCH_SIZE, seed=SEED):
+    set_random_seed(seed)
 
     if not os.path.exists(DATA_PATH):
-        download_stock_data()
+        download_stock_data(ticker=ticker, start=start)
 
     dataset = load_dataset()
     print(dataset.head())
@@ -140,7 +135,7 @@ def main():
     model = build_lstm_model(N_STEPS, FEATURES)
     model.summary()
 
-    model.fit(X_train, y_train, epochs=EPOCHS, batch_size=BATCH_SIZE)
+    model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size)
 
     predicted_stock_price = predict_test(model, dataset, sc, test_set)
 
