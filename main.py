@@ -1,5 +1,4 @@
-def main():
-    print("Hello from rnn-stock-prediction!")
+from Rnn import main
 
 
 if __name__ == "__main__":
