@@ -62,3 +62,5 @@ python main.py --ticker MA --start 2010-01-01 --epochs 50 --batch-size 32 --seed
 ## Results
 
 A sample run produces an RMSE of ~8.3 on the held-out test period.
+
+Latest run (50 epochs, seed 455): test-set RMSE of 8.27.
